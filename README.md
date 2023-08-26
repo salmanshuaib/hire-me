@@ -1,2 +1,2 @@
 # hire-me
-A fun effective way to go about your job hunt
+A fun organized way to go about your job hunt
