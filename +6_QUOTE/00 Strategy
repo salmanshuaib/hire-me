@@ -1,3 +1,33 @@
+- LETS WRITE AN EXCEL MACRO IN VBA (VISUAL BASIC FOR APPLICATIONS) CALLED "zoomer" THAT AT FIRST:
+
+1. ESTABLISHES 10 COLUMNS IN AN EXCEL SHEET:
++ SERIAL NUMBER
++ EMPLOYMENT AGENCY
++ WEBSITE
++ TELEPHONE
++ ADDRESS
++ APPLIED ONLINE?
++ CALLED?
++ TEL APPOINTMENT?
++ INTERVIEW?
++ SUCCESS
+
+2. Formatting:
+a) Makes these column headings BOLD.
+b) Table cells have a cyan fill.
+c) Table cells are bordered on all sides by a thick border.
+
+
+3. Prompts the user to fill out any cell, part of the table, by a sort of tkinter dialog box called "zoomer" that:
+a) is launched by default.
+b) can also be launched by the keys SHIFT+P.
+c) the user enters the cell address that the user wishes to edit.
+
+4. THE MACRO ALLOWS FOR IMPORT OF DATA AS INDIVIDUAL COLUMNS: INTO THE COLUMNS OF ITSELF, VIA AN IMPORT BUTTON THAT FURTHER PROMPTS THE 
+user WHICH OF THE 10 COLUMNS he WISHES TO IMPORT DATA INTO.
+
+5. The macro, , can be integrated with APIs of job-search websites.
+
 - hire-moi organizes data about Employment Agencies in a City, so that one can physcially visit them after booking an appointment 
 via TELELPHONE; notating the Employment Agencies' PHYSICAL ADDRESS and WEBSITE ADDRESS. So:
 + NAME
