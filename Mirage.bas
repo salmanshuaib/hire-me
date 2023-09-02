@@ -1,6 +1,6 @@
 Attribute VB_Name = "Mirage"
 
-Function Mirage()
+Function MIRAGE()
     '''''''Format Excel sheet
 '    Dim ws As Worksheet
 '    Set ws = ThisWorkbook.Sheets.Add
@@ -56,6 +56,6 @@ Function Mirage()
 End Function
 
 Function CallRaptor()
-    ROMMIE = Mirage()
+    ROMMIE = MIRAGE()
 End Function
 
