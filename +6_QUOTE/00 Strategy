@@ -1,3 +1,7 @@
+- NEXT STEP:
++ Enable Mirage.bas in hire-moi.xlsm to allow insertion of text via the nav panel, instead of 
+having to switcn nav panel off and on again.
+
 - LETS WRITE AN EXCEL MACRO IN VBA (VISUAL BASIC FOR APPLICATIONS) CALLED "zoomer" THAT AT FIRST:
 
 1. ESTABLISHES 10 COLUMNS IN AN EXCEL SHEET:
@@ -38,3 +42,4 @@ via TELELPHONE; notating the Employment Agencies' PHYSICAL ADDRESS and WEBSITE A
 - Version 1 will require manual input of data, e.g. as obtained from ChatGPT.
 - Future versions will automate this process by linking up with the Chat GPTAPI.
 - There could also be other websites with APIs that can be utilized to pull data into hire-moi.
+
