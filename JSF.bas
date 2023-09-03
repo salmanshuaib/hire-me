@@ -1,4 +1,4 @@
-Attribute VB_Name = "Mirage"
+Attribute VB_Name = "JSF"
     '''''''Format Excel sheet
 '    Dim ws As Worksheet
 '    Set ws = ThisWorkbook.Sheets.Add
@@ -31,33 +31,33 @@ Attribute VB_Name = "Mirage"
 '
 '    MsgBox ("Formatting COMPLETE")
     
-Function MIRAGE()
+Function JSF()
     '''''''Launch NAVIGATOR
-    Dim colAddy As String ' Change this to String since InputBox returns String
+    Dim Bravo As String  ' Change this to String since InputBox returns String
     Dim colNumber As Long
-    Dim RoAddy As Long
+    Dim Tango As Long
     Dim userInputText As String
     Dim userInputNote As String
     Dim selectedCell As Range
 
-    colAddy = InputBox("Enter heading, for example: 2", "NAVIGATOR")
+    Bravo = InputBox("Enter HEADING, For Example: 2", "NAVIGATOR")
     
     ' Exit if the user hits Cancel
-    If colAddy = "" Then Exit Function
+    If Bravo = "" Then Exit Function
     
     ' Check if the user input is a number
-    If IsNumeric(colAddy) Then
-        colNumber = CLng(colAddy) ' Convert the string to a long
+    If IsNumeric(Bravo) Then
+        colNumber = CLng(Bravo) ' Convert the string to a long
 
         'Find the last used row in the specified column
-        RoAddy = ThisWorkbook.Sheets("Employment Search").Cells(ThisWorkbook.Sheets("Employment Search").Rows.Count, colNumber).End(xlUp).Row
+        Tango = ThisWorkbook.Sheets("Employment Search").Cells(ThisWorkbook.Sheets("Employment Search").Rows.Count, colNumber).End(xlUp).Row
         
         'If the column is completely empty, it would select the first row.
         'Otherwise, it will select the row next to the last used row.
-        If RoAddy = 1 And ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber).Value = "" Then
+        If Tango = 1 And ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber).Value = "" Then
             Set selectedCell = ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber)
         Else
-            Set selectedCell = ThisWorkbook.Sheets("Employment Search").Cells(RoAddy + 1, colNumber)
+            Set selectedCell = ThisWorkbook.Sheets("Employment Search").Cells(Tango + 1, colNumber)
         End If
         
         ' Highlight the selected cell
@@ -84,14 +84,19 @@ Function MIRAGE()
         selectedCell.Comment.Shape.Fill.ForeColor.RGB = RGB(255, 255, 0) ' Set comment color to red
 
     Else
-        ' If the user input is not a number
-        pilot = CallRaptor()
+        pilot = CallMiragesEscort(Bravo)
     End If
-    
 End Function
 
-Function CallRaptor()
-    ROMMIE = MIRAGE()
+Function CallMiragesEscort(Goddess As String)
+    Goddess = JSF()
+'    Dim XWoman As Integer
+'    XWoman = CInt(Goddess)
+'    If (XWoman = 1) Or (XWoman = 2) Or (XWoman = 3) Or (XWoman = 4) Or (XWoman = 5) Or (XWoman = 6) Or (XWoman = 7) Or (XWoman = 8) Or (XWoman = 9) Or (XWoman = 10) Then
+'        LatentSupremacy = JSF()
+'    Else
+'        MsgBox ("Please Enter a Number Only_")
+'    End If
 End Function
 
 
