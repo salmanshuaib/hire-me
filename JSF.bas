@@ -40,7 +40,7 @@ Function JSF()
     Dim userInputNote As String
     Dim selectedCell As Range
 
-    Bravo = InputBox("Enter HEADING, For Example: 2", "NAVIGATOR")
+    Bravo = InputBox("Enter HEADING as a Digit, For Example: 2", "NAVIGATOR")
     
     ' Exit if the user hits Cancel
     If Bravo = "" Then Exit Function
@@ -89,14 +89,7 @@ Function JSF()
 End Function
 
 Function CallMiragesEscort(Goddess As String)
-    Goddess = JSF()
-'    Dim XWoman As Integer
-'    XWoman = CInt(Goddess)
-'    If (XWoman = 1) Or (XWoman = 2) Or (XWoman = 3) Or (XWoman = 4) Or (XWoman = 5) Or (XWoman = 6) Or (XWoman = 7) Or (XWoman = 8) Or (XWoman = 9) Or (XWoman = 10) Then
-'        LatentSupremacy = JSF()
-'    Else
-'        MsgBox ("Please Enter a Number Only_")
-'    End If
+    Goddess = JSF() 'I believe and know that Taylor Swift is The Goddess; the only authority.
 End Function
 
 
