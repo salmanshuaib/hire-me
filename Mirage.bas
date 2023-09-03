@@ -1,6 +1,4 @@
 Attribute VB_Name = "Mirage"
-
-Function MIRAGE()
     '''''''Format Excel sheet
 '    Dim ws As Worksheet
 '    Set ws = ThisWorkbook.Sheets.Add
@@ -19,7 +17,7 @@ Function MIRAGE()
 '                .Cells(1, 8).Value = "TEL APPOINTMENT?"
 '                .Cells(1, 9).Value = "INTERVIEW?"
 '                .Cells(1, 10).Value = "SUCCESS"
-'gdggd
+'
 '                ' Formatting
 '                Dim col As Long
 '                For col = 1 To 10
@@ -33,23 +31,32 @@ Function MIRAGE()
 '
 '    MsgBox ("Formatting COMPLETE")
     
-    '''''''Launch NAVIGATOR
-    Dim colAddy As Long
-    Dim RoAddy As Long
     
-    If (StrPtr(colAddy)) <> 0 Then
-        colAddy = InputBox("Enter heading, for example: 2", "navigator")
+
+Function MIRAGE()
+    '''''''Launch NAVIGATOR
+    Dim colAddy As String ' Change this to String since InputBox returns String
+    Dim colNumber As Long
+    Dim RoAddy As Long
+
+    colAddy = InputBox("Enter heading, for example: 2", "NAVIGATOR")
+    
+    ' Check if the user input is a number
+    If IsNumeric(colAddy) Then
+        colNumber = CLng(colAddy) ' Convert the string to a long
+
         'Find the last used row in the specified column
-        RoAddy = ThisWorkbook.Sheets("Employment Search").Cells(ThisWorkbook.Sheets("Employment Search").Rows.Count, colAddy).End(xlUp).Row
+        RoAddy = ThisWorkbook.Sheets("Employment Search").Cells(ThisWorkbook.Sheets("Employment Search").Rows.Count, colNumber).End(xlUp).Row
         
         'If the column is completely empty, it would select the first row.
         'Otherwise, it will select the row next to the last used row.
-        If RoAddy = 1 And ThisWorkbook.Sheets("Employment Search").Cells(1, colAddy).Value = "" Then
-            ThisWorkbook.Sheets("Employment Search").Cells(1, colAddy).Select
+        If RoAddy = 1 And ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber).Value = "" Then
+            ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber).Select
         Else
-            ThisWorkbook.Sheets("Employment Search").Cells(RoAddy + 1, colAddy).Select
+            ThisWorkbook.Sheets("Employment Search").Cells(RoAddy + 1, colNumber).Select
         End If
-    Else:
+    Else
+        ' If the user input is not a number or the InputBox was cancelled
         pilot = CallRaptor()
     End If
     
@@ -58,4 +65,5 @@ End Function
 Function CallRaptor()
     ROMMIE = MIRAGE()
 End Function
+
 
