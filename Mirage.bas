@@ -31,8 +31,6 @@ Attribute VB_Name = "Mirage"
 '
 '    MsgBox ("Formatting COMPLETE")
     
-    
-
 Function MIRAGE()
     '''''''Launch NAVIGATOR
     Dim colAddy As String ' Change this to String since InputBox returns String
@@ -75,7 +73,7 @@ Function MIRAGE()
                 selectedCell.Comment.Delete ' Delete existing comment if it exists
             End If
             selectedCell.AddComment Text:=userInputNote
-            selectedCell.Comment.Shape.Fill.ForeColor.RGB = RGB(255, 0, 0) ' Set comment color to red
+            selectedCell.Comment.Shape.Fill.ForeColor.RGB = RGB(255, 255, 0) ' Set comment color to red
         End If
 
     Else
