@@ -38,6 +38,9 @@ Function MIRAGE()
     Dim colAddy As String ' Change this to String since InputBox returns String
     Dim colNumber As Long
     Dim RoAddy As Long
+    Dim userInputText As String
+    Dim userInputNote As String
+    Dim selectedCell As Range
 
     colAddy = InputBox("Enter heading, for example: 2", "NAVIGATOR")
     
@@ -51,10 +54,30 @@ Function MIRAGE()
         'If the column is completely empty, it would select the first row.
         'Otherwise, it will select the row next to the last used row.
         If RoAddy = 1 And ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber).Value = "" Then
-            ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber).Select
+            Set selectedCell = ThisWorkbook.Sheets("Employment Search").Cells(1, colNumber)
         Else
-            ThisWorkbook.Sheets("Employment Search").Cells(RoAddy + 1, colNumber).Select
+            Set selectedCell = ThisWorkbook.Sheets("Employment Search").Cells(RoAddy + 1, colNumber)
         End If
+        
+        ' Highlight the selected cell
+        selectedCell.Select
+        
+        ' Ask user for the text input
+        userInputText = InputBox("Enter your text:", "NAVIGATOR - Text Entry")
+        If userInputText <> "" Then ' If user provided some text
+            selectedCell.Value = userInputText
+        End If
+        
+        ' Ask user for the comment
+        userInputNote = InputBox("Enter your note:", "NAVIGATOR - Note Entry")
+        If userInputNote <> "" Then ' If user provided a comment
+            If Not selectedCell.Comment Is Nothing Then
+                selectedCell.Comment.Delete ' Delete existing comment if it exists
+            End If
+            selectedCell.AddComment Text:=userInputNote
+            selectedCell.Comment.Shape.Fill.ForeColor.RGB = RGB(255, 0, 0) ' Set comment color to red
+        End If
+
     Else
         ' If the user input is not a number or the InputBox was cancelled
         pilot = CallRaptor()
@@ -65,5 +88,6 @@ End Function
 Function CallRaptor()
     ROMMIE = MIRAGE()
 End Function
+
 
 
