@@ -42,6 +42,9 @@ Function MIRAGE()
 
     colAddy = InputBox("Enter heading, for example: 2", "NAVIGATOR")
     
+    ' Exit if the user hits Cancel
+    If colAddy = "" Then Exit Function
+    
     ' Check if the user input is a number
     If IsNumeric(colAddy) Then
         colNumber = CLng(colAddy) ' Convert the string to a long
@@ -62,22 +65,26 @@ Function MIRAGE()
         
         ' Ask user for the text input
         userInputText = InputBox("Enter your text:", "NAVIGATOR - Text Entry")
-        If userInputText <> "" Then ' If user provided some text
-            selectedCell.Value = userInputText
-        End If
+        
+        ' Exit if the user hits Cancel
+        If userInputText = "" Then Exit Function
+        selectedCell.Value = userInputText
         
         ' Ask user for the comment
         userInputNote = InputBox("Enter your note:", "NAVIGATOR - Note Entry")
-        If userInputNote <> "" Then ' If user provided a comment
-            If Not selectedCell.Comment Is Nothing Then
-                selectedCell.Comment.Delete ' Delete existing comment if it exists
-            End If
-            selectedCell.AddComment Text:=userInputNote
-            selectedCell.Comment.Shape.Fill.ForeColor.RGB = RGB(255, 255, 0) ' Set comment color to red
+        
+        ' Exit if the user hits Cancel
+        If userInputNote = "" Then Exit Function
+        
+        ' If user provided a comment
+        If Not selectedCell.Comment Is Nothing Then
+            selectedCell.Comment.Delete ' Delete existing comment if it exists
         End If
+        selectedCell.AddComment Text:=userInputNote
+        selectedCell.Comment.Shape.Fill.ForeColor.RGB = RGB(255, 255, 0) ' Set comment color to red
 
     Else
-        ' If the user input is not a number or the InputBox was cancelled
+        ' If the user input is not a number
         pilot = CallRaptor()
     End If
     
@@ -86,6 +93,7 @@ End Function
 Function CallRaptor()
     ROMMIE = MIRAGE()
 End Function
+
 
 
 
