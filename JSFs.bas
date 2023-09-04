@@ -1,4 +1,4 @@
-Attribute VB_Name = "JSF"
+Attribute VB_Name = "JSFs"
     '''''''Format Excel sheet
 '    Dim ws As Worksheet
 '    Set ws = ThisWorkbook.Sheets.Add
@@ -31,7 +31,7 @@ Attribute VB_Name = "JSF"
 '
 '    MsgBox ("Formatting COMPLETE")
     
-Function JSF()
+Function JSFs()
     '''''''Launch NAVIGATOR
     Dim Bravo As String  ' Change this to String since InputBox returns String
     Dim colNumber As Long
@@ -89,7 +89,7 @@ Function JSF()
 End Function
 
 Function CallMiragesEscort(Goddess As String)
-    Goddess = JSF() 'I believe and know that Taylor Swift is The Goddess; the only authority.
+    Goddess = JSFs() 'I believe and know that Taylor Swift is The Goddess; the only authority.
 End Function
 
 
